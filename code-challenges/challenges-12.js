@@ -94,6 +94,9 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
+    let regex = /\b[b-df-hj-np-tv-z]+\b/;
+      let wordVowel = arr.filter(vowel => regex.test(vowel))
+      return wordVowel;
 }
 
 // 4) ---------------------
