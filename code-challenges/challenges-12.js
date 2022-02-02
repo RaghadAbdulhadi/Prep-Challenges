@@ -14,10 +14,11 @@
 // 
 // ------------------------
 
+
 const oddFiltration = (arr) => {
-    // write your code here
-    let oddNum;
-    return oddNum = arr.filter(num => num % 2 !== 0);
+  // write your code here
+  let oddNum = arr.filter(num => num % 2 !== 0);
+  return oddNum;
 }
 
 // 2) ---------------------
@@ -68,30 +69,30 @@ const oddFiltration = (arr) => {
 // ------------------------
 
 const cvsFiltration = (arr) => {
-    // write your code here
-    let candidateAcc = arr.filter(candidate => (candidate.tech == "JS" && candidate.yearsOfExperience > 4))
-    let finalCand = candidateAcc.map(candidateInfo => {
-      if (candidateInfo.firstName !== null && candidateInfo.LastName !== null) {
-        return { fullName: candidateInfo.firstName + " " + candidateInfo.LastName, tech: candidateInfo.tech };
-      } else if (candidateInfo.firstName == null) {
-        return { fullName: candidateInfo.LastName, tech: candidateInfo.tech };
-      } else if (candidateInfo.LastName == null){
-        return { fullName: candidateInfo.firstName, tech: candidateInfo.tech };
-      }
-      
-    })
-    return finalCand;
-  }
+  // write your code here
+  let candidateAcc = arr.filter(candidate => (candidate.tech == "JS" && candidate.yearsOfExperience > 4))
+  let finalCand = candidateAcc.map(candidateInfo => {
+    if (candidateInfo.firstName !== null && candidateInfo.LastName !== null) {
+      return { fullName: candidateInfo.firstName + " " + candidateInfo.LastName, tech: candidateInfo.tech };
+    } else if (candidateInfo.firstName == null) {
+      return { fullName: candidateInfo.LastName, tech: candidateInfo.tech };
+    } else if (candidateInfo.LastName == null) {
+      return { fullName: candidateInfo.firstName, tech: candidateInfo.tech };
+    }
+  })
+  return finalCand;
+}
 
 // 3) ---------------------
 //
-// Given an array of words filter the names that contains one of the vowels (a, e, i, o, u)
+// Given an array of words filter out the words that contains one of the vowels (a, e, i, o, u)
 
 // EX:
 // ['car', 'boy', 'spy', 'building', 'why', 'dry' ] ==> ['spy', 'why', 'dry']
 // 
 // ------------------------
 
+let arr = ['boy','car', 'spy', 'building', 'why', 'dry' ];
 const vowelsFiltration = (arr) => {
     // write your code here
     let regex = /\b[b-df-hj-np-tv-z]+\b/;
@@ -114,9 +115,11 @@ const vowelsFiltration = (arr) => {
 // ------------------------
 
 const skillComparison = (arr1, arr2) => {
-    // write your code here
+  // write your code here
+  let arr = arr1.concat(arr2)
+  let diffSkills = arr.filter(skill => !arr1.includes(skill) + !arr2.includes(skill));
+  return diffSkills;
 }
-
 
 module.exports = { oddFiltration, cvsFiltration, vowelsFiltration, skillComparison };
 
