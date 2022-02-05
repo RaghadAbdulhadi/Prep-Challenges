@@ -22,7 +22,7 @@ const LastWord = (str) => {
     // write your code here
     let lastWord = str.slice(str.lastIndexOf(" ") + 1)
     return lastWord;
-}
+  }
 
 // 2) ---------------------
 // 
@@ -37,7 +37,7 @@ const LastWord_2 = (str) => {
     let arrStr = str.split(" ")
     let lastWord = arrStr[arrStr.length - 1]
     return lastWord
-}
+  }
 
 // 3) ---------------------
 // 
@@ -54,18 +54,19 @@ const LastWord_2 = (str) => {
 const replaceWords = (str) => {
     // write your code here
     const d = {
-        "I": "We",
-        "was": "were",
-        "am": "are"
+        "I" : "We",
+        "was" : "were",
+        "am" : "are"
     }
     const strArr = str.split(" ");
-    for (let i = 0; i < strArr.length; i++) {
+    for (let i = 0 ; i < strArr.length ; i++) {
         if (d[strArr[i]]) {
-            strArr.splice(i, 1, d[strArr[i]])
+            strArr.splice(i , 1 , d[strArr[i]])
         }
     }
-    return strArr.join(" ")
+  return strArr.join(" ")
 }
+
 // 4) ---------------------
 // 
 // Write a function that "joins" the array of words together and put a comma "," after every five words
@@ -75,15 +76,16 @@ const replaceWords = (str) => {
 
 const arrToStr = (arr) => {
     // write your code here
-    arr.forEach((word, idx) => {
-        if (idx % 4 == 0 && idx !== 0) {
-            arr.splice(idx + 1, 0, ",")
-        }
-
-    })
-    return arr.join(" ").replaceAll(" ,", ",")
-}
-
+    let ans = ""
+    for (let i = 0 ; i < arr.length; i++) {
+      if (i % 5 == 0 && i != 0) {
+        ans+=arr[i] +  ", "
+      } else {
+        ans+=arr[i] + " "
+      }
+    }
+    return ans;
+  }
 
 // 5) ---------------------
 // 
@@ -99,31 +101,6 @@ const arrToStr = (arr) => {
 
 const letterCounter = (str) => {
     // write your code here
-    let ans = "";
-    let obj = {};
-    for (const char of str) {
-        if (obj[char]) {
-            obj[char] += 1;
-        }
-        else {
-            obj[char] = 1;
-        }
-    }
-
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] == " ") {
-            ans += ` `
-        }
-        else if (!obj[str[i]]) {
-            ans += ``
-        }
-        else {
-            ans += `${str[i]}${obj[str[i]]}`
-            obj[str[i]] = ""
-        }
-
-    }
-    return ans;
 }
 
 
