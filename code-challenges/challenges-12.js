@@ -92,11 +92,12 @@ const cvsFiltration = (arr) => {
 // 
 // ------------------------
 
-let arr = ['boy','car', 'spy', 'building', 'why', 'dry' ];
+//let //arr = ['boy','car', 'spy', 'building', 'why', 'dry' ];
 const vowelsFiltration = (arr) => {
     // write your code here
-    let regex = /\b[b-df-hj-np-tv-z]+\b/;
-      let wordVowel = arr.filter(vowel => regex.test(vowel))
+    // let regex = /\b[b-df-hj-np-tv-z]+\b/;
+    const vowels = ['a' , 'e' , 'i' , 'u' , 'o']
+      let wordVowel = arr.filter(vowel => vowels.includes(vowel))
       return wordVowel;
 }
 
