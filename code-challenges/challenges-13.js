@@ -38,9 +38,9 @@
 // ------------------------
 
 const objectCounter = (obj) => {
-    // write your code here
-
-}
+  // write your code here
+  return obj.reduce((prevObj, currObj, idx) => idx + 1)
+};
 
 // 2) ---------------------
 // 
@@ -57,8 +57,10 @@ const objectCounter = (obj) => {
 
 const stringReverse = (str) => {
     // write your code here
-
-}
+    let arrStr = str.split(" ")
+    const reversedStr = (arrStr.reduce((prevObj, currObj, idx, arr)=> arr.reverse())).join(" ")
+    return (reversedStr);
+  }
 
 // 3) ---------------------
 // 
@@ -100,7 +102,16 @@ const stringReverse = (str) => {
 
 const statistics = (obj) => {
     // write your code here
-}
+    const stat = obj.reduce((groupedCandidates, candidate) => {
+      const candidateName = candidate.votes_To;
+      if (groupedCandidates[candidateName] == null) {
+        groupedCandidates[candidateName] = 0;
+      }
+      groupedCandidates[candidateName]++
+      return groupedCandidates;
+    }, {})
+    return stat;
+  }
 
 
 
