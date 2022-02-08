@@ -74,18 +74,15 @@ const replaceWords = (str) => {
 //
 // ------------------------
 
-const arrToStr = (arr) => {
-    // write your code here
-    let ans = ""
-    for (let i = 0 ; i < arr.length; i++) {
-      if (i % 5 == 0 && i != 0) {
-        ans+=arr[i] +  ", "
-      } else {
-        ans+=arr[i] + " "
+const arrToStr = (arr) => {     
+  // write your code here     
+  for (let i = 0; i < arr.length; i++) {       
+    if(i%4==0 && i!=0){         
+      arr.splice(i,1, `${arr[i]},`)       
+      }      
+      }     
+      return arr.join(" "); 
       }
-    }
-    return ans;
-  }
 
 // 5) ---------------------
 // 
@@ -100,7 +97,25 @@ const arrToStr = (arr) => {
 // ------------------------
 
 const letterCounter = (str) => {
-    // write your code here
+  // write your code here
+  let arrStr = str.split("");
+  let strCount = {};
+  let ans = "";
+  let array;
+  arrStr.forEach(letter => {
+    if (strCount[letter]) {
+      strCount[letter] += 1
+    }
+    else {
+      strCount[letter] = 1
+    }
+    delete strCount[" "];
+    array = Object.entries(strCount)
+    ans = array.map(letNum =>{
+      return letNum.join("")
+    })
+  })
+  return ans.join(" ");
 }
 
 
