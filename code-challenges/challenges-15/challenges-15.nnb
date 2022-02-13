@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function equalizeArray(arr) {\n    let counter = 0;\n    let numberCountObj = {}\n    for (let number of arr) {\n        \n        if (numberCountObj[number]) {\n            numberCountObj[number]+= 1;\n        } else {\n            numberCountObj[number] = 1;\n        }\n    }\n    let mostDupNum = Math.max(...Object.values(numberCountObj))\n    let key = parseInt(Object.keys(numberCountObj).find(k => numberCountObj[k] === mostDupNum));\n\n    for (let num of arr) {\n        if (num !== key) {\n            counter++\n        }\n    }\n    return counter;\n\n}"
+                "function equalizeArray(arr) {\n    let counter = 0;\n    let numberCountObj = {};\n    for (let number of arr) { \n        if (numberCountObj[number]) {\n            numberCountObj[number]+= 1;\n        } else {\n            numberCountObj[number] = 1;\n        }\n    }\n    let mostDupNum = Math.max(...Object.values(numberCountObj))\n    let key = parseInt(Object.keys(numberCountObj).find(k => numberCountObj[k] === mostDupNum));\n\n    for (let num of arr) {\n        if (num !== key) {\n            counter++\n        }\n    }\n    return counter;\n}"
             ],
             "outputs": []
         },
