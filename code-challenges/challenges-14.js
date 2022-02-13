@@ -39,7 +39,7 @@ const LastWord_2 = (str) => {
     return lastWord
   }
 
-// 3) ---------------------
+// 3) ----------------------------------
 // 
 // Number 2 was easy right?, ok then using the splice method replace all the "I" with "We", "am" with "are" and "was" with "were"
 //
